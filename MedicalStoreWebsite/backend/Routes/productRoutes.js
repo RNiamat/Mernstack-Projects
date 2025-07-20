@@ -1,12 +1,8 @@
-// backend/routes/productRoutes.js
-const express = require("express");
+const express = require('express');
+const { getAllProducts, addProduct } = require('../controllers/productController');
 const router = express.Router();
-const Product = require("../models/Product");
 
-// Sample data for now
-router.get("/", async (req, res) => {
-  const products = await Product.find();
-  res.json(products);
-});
+router.get('/', getAllProducts);
+router.post('/', addProduct);
 
 module.exports = router;

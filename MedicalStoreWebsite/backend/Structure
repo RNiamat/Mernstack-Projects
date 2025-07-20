@@ -1,0 +1,13 @@
+backend/
+│
+├── config/
+│   └── db.js            // MongoDB connection
+├── models/
+│   └── Product.js       // Product model for medical store
+├── routes/
+│   └── productRoutes.js // API routes for products
+├── controllers/
+│   └── productController.js // Handles logic
+├── .env                 // Environment variables
+├── server.js            // Entry point
+├── package.json
