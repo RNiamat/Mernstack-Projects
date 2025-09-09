@@ -8,6 +8,7 @@ import MyOrders from './pages/MyOrders'
 import { AppContext } from './context/AppContext'
 import { useContext } from 'react'
 import Auth from './models/Auth'
+import ProductCategory from './pages/ProductCategory'
 
 const App = () => {
   const { isSeller, showUserLogin } = useContext(AppContext);  // ✅ Correct
@@ -22,8 +23,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/product/:category/:id" element={<ProductDetails />} />
           <Route path="/my-orders" element={<MyOrders />} />
+          <Route path="/products/:category" element={<ProductCategory />} />
         </Routes>
       </div>
     </div>
