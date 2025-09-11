@@ -7,13 +7,13 @@ const BestSeller = () => {
   return (
     <div className="mt-16">
       <p className="text-2xl font-medium md:text-3xl">Best Seller</p>
-      <div>
-        {products.filter((product) => product.inStock).slice(0, 6).map((product , index) => (
+      <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        {products.filter((product) => product.inStock).slice(0, 5).map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default BestSeller
