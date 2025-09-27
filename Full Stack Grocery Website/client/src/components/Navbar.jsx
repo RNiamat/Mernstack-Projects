@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import profileIcon from "../assets/profile_icon.png";
@@ -7,7 +7,13 @@ import { assets } from "../assets/assets";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const { user, setUser, navigate, setShowUserLogin, cartCount } = useContext(AppContext);
+  const { user, setUser, navigate, setShowUserLogin, cartCount, searchQuery,setSearchQuery } = useContext(AppContext);
+
+  useEffect(() => {
+    if(searchQuery.length >0){
+      navigate("/products");
+    }
+  }, [searchQuery]);
 
   return (
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
@@ -24,6 +30,7 @@ const Navbar = () => {
         {/* Search bar */}
         <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">
           <input
+          onChange={(e)=> setSearchQuery(e.target.value)}
             className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
             type="text"
             placeholder="Search products"
