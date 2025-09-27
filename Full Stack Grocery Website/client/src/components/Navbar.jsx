@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import profileIcon from "../assets/profile_icon.png";
 import cart_icon from "../assets/cart_icon.svg";
+import { assets } from "../assets/assets";  
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
