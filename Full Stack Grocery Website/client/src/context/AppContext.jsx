@@ -49,18 +49,16 @@ const AppContextProvider = ({children}) => {
         toast.success("Cart item updated");
     }
 
-    const totalCartAmount = () => {
-        let totalCartAmount = 0;
-        for(const items in cartItems)
-        {
-            let itemInfo = products.find((product)=> product._id === items)
-            if(itemInfo[items]>0)
-            {
-                totalCartAmount += cartItems[items]* itemInfo.offerPrice;
-            }
-        }
-        return math.floor(totalCartAmount * 1000)/1000;
+   const totalCartAmount = () => {
+  let totalCartAmount = 0;
+  for (const itemId in cartItems) {
+    const itemInfo = products.find((product) => String(product._id) === String(itemId));
+    if (itemInfo) {
+      totalCartAmount += cartItems[itemId] * itemInfo.offerPrice;
     }
+  }
+  return Math.floor(totalCartAmount * 1000) / 1000;
+};
 
     const removeFromCart = (itemId) =>
     {
