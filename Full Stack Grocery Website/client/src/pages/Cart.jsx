@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from 'react'
 import { AppContext } from '../context/AppContext'
 import { dummyAddress } from '../assets/assets';
 
+
 const Cart = () => {
   const {
     products,
