@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="home-wrapper">
       <header>
-        <div className="logo">Supermart Inventory</div>
+        <div className="logo">AutoStock Manager</div>
         <nav>
           <Link to="/">Home</Link>
           <Link to="/About">About</Link>
@@ -15,7 +15,7 @@ function Home() {
       </header>
 
       <section className="hero">
-        <h1>Welcome to Supermart Inventory System</h1>
+        <h1>Welcome to AutoStock Manager</h1>
         <p>Click any section below to start managing your store efficiently.</p>
       </section>
 
